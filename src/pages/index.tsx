@@ -1,3 +1,6 @@
+import { Container } from '@/components/Container'
+import { SkewButton } from '@/components/SkewButton'
+import { Typography } from '@/components/Typography'
 import { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -10,8 +13,19 @@ export const HomePage: NextPage = () => {
       <Head>
         <title>home - hota.works</title>
       </Head>
-
-      <div>hota.works</div>
+      <Container
+        justify="center"
+        align="center"
+        fillHeight
+        style={{ flexFlow: 'column' }}
+      >
+        <Typography>hota1024</Typography>
+        <Container justify="center">
+          <SkewButton>About</SkewButton>
+          <SkewButton>Works</SkewButton>
+          <SkewButton>Contact</SkewButton>
+        </Container>
+      </Container>
     </>
   )
 }
