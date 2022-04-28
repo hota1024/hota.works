@@ -7,6 +7,7 @@ const globalStyles = globalCss({
     backgroundImage: 'radial-gradient($dotGray 1px, transparent 0)',
     backgroundSize: '32px 32px',
     backgroundPosition: '-32px -32px',
+    fontFamily: `'Roboto Mono', 'Noto Sans JP', sans-serif`,
   },
 })
 
