@@ -7,7 +7,6 @@ export const SkewButton = styled('button', {
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
-  margin: '$1',
   minWidth: 120,
   height: 32,
   background: 'transparent',
