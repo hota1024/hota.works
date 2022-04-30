@@ -1,3 +1,4 @@
+import { Cursor } from '@/components/Cursor'
 import { globalCss } from '@/stitches.config'
 import type { AppProps } from 'next/app'
 
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
+      <Cursor />
     </>
   )
 }
