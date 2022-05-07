@@ -32,7 +32,7 @@ export const HomePage: NextPage = () => {
         <Box
           position="absolute"
           css={{
-            right: 64,
+            right: 96,
           }}
         >
           <Rectangle />
