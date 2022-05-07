@@ -8,6 +8,18 @@ const cursorSize = (size: number) => ({
   left: -size / 2,
 })
 
+const CursorAnimation = keyframes({
+  from: {
+    ...cursorSize(32),
+  },
+  '50%': {
+    ...cursorSize(48),
+  },
+  to: {
+    ...cursorSize(32),
+  },
+})
+
 const CursorPointer = styled('div', {
   position: 'fixed',
   transform: 'translate(0, 0)',
@@ -25,22 +37,11 @@ const CenterPointer = styled(CursorPointer, {
     hover: {
       true: {
         ...cursorSize(48),
+        animation: `${CursorAnimation} 1000ms infinite ease-in-out`,
         background: 'transparent',
         border: '2px solid white',
       },
     },
-  },
-})
-
-const CursorAnimation = keyframes({
-  from: {
-    ...cursorSize(32),
-  },
-  '50%': {
-    ...cursorSize(48),
-  },
-  to: {
-    ...cursorSize(32),
   },
 })
 
