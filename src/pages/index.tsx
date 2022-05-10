@@ -33,10 +33,20 @@ export const HomePage: NextPage = () => {
         <Box
           position="absolute"
           css={{
-            left: 96,
+            top: 32,
+            left: 32,
           }}
         >
           <DotRectangle />
+        </Box>
+        <Box
+          position="absolute"
+          css={{
+            top: 32,
+            right: 32,
+          }}
+        >
+          <DotRectangle css={{ borderRadius: '50%' }} />
         </Box>
         <Box
           position="absolute"
