@@ -1,5 +1,6 @@
 import { Box } from '@/components/Box'
 import { Container } from '@/components/Container'
+import { DotRectangle } from '@/components/DotRectangle'
 import { Rectangle } from '@/components/Rectangle'
 import { SkewButton } from '@/components/SkewButton'
 import { Stack } from '@/components/Stack'
@@ -29,6 +30,14 @@ export const HomePage: NextPage = () => {
           <SkewButton>Works</SkewButton>
           <SkewButton>Contact</SkewButton>
         </Stack>
+        <Box
+          position="absolute"
+          css={{
+            left: 96,
+          }}
+        >
+          <DotRectangle />
+        </Box>
         <Box
           position="absolute"
           css={{
