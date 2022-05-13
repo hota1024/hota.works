@@ -15,7 +15,8 @@ export const {
       gray: '#d0d0d0',
       dotGray: '$gray',
       text: '#101010',
-      blue: '#212AFF',
+      blue: 'rgb(33, 42, 255)',
+      blueAlpha: 'rgba(33, 42, 255, 0.4)',
     },
     space: {
       1: '4px',
