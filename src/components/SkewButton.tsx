@@ -15,7 +15,7 @@ export const SkewButton = styled('button', {
   fontWeight: 'bold',
   letterSpacing: '.145rem',
   textTransform: 'uppercase',
-  transition: 'all 140ms ease-in-out',
+  transition: 'all 100ms ease-in-out',
   color: '$blue',
   cursor: 'pointer',
   '&::before': {
@@ -44,6 +44,6 @@ export const SkewButton = styled('button', {
     transform: 'skewX(-30deg) scaleX(1)',
   },
   '&:hover': {
-    color: 'white',
+    color: '$background',
   },
 })
