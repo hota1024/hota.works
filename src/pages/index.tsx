@@ -1,4 +1,12 @@
-import { useBlue, useGreen, useRed } from '@/atoms/color'
+import {
+  useBgBlue,
+  useBgGreen,
+  useBgRed,
+  useBlue,
+  useFlipped,
+  useGreen,
+  useRed,
+} from '@/atoms/color'
 import { Box } from '@/components/Box'
 import { ColorDetails } from '@/components/ColorDetails'
 import { Container } from '@/components/Container'
@@ -20,6 +28,12 @@ export const HomePage: NextPage = () => {
   const [r, setRed] = useRed()
   const [g, setGreen] = useGreen()
   const [b, setBlue] = useBlue()
+
+  const [bgR, setBgRed] = useBgRed()
+  const [bgG, setBgGreen] = useBgGreen()
+  const [bgB, setBgBlue] = useBgBlue()
+
+  const [flipped] = useFlipped()
 
   return (
     <>
@@ -79,8 +93,12 @@ export const HomePage: NextPage = () => {
                 type="range"
                 min={0}
                 max={255}
-                value={r}
-                onChange={(e) => setRed(e.target.valueAsNumber)}
+                value={flipped ? bgR : r}
+                onChange={(e) =>
+                  flipped
+                    ? setBgRed(e.target.valueAsNumber)
+                    : setRed(e.target.valueAsNumber)
+                }
               />
             </div>
             <div>
@@ -88,8 +106,12 @@ export const HomePage: NextPage = () => {
                 type="range"
                 min={0}
                 max={255}
-                value={g}
-                onChange={(e) => setGreen(e.target.valueAsNumber)}
+                value={flipped ? bgG : g}
+                onChange={(e) =>
+                  flipped
+                    ? setBgGreen(e.target.valueAsNumber)
+                    : setGreen(e.target.valueAsNumber)
+                }
               />
             </div>
             <div>
@@ -97,8 +119,12 @@ export const HomePage: NextPage = () => {
                 type="range"
                 min={0}
                 max={255}
-                value={b}
-                onChange={(e) => setBlue(e.target.valueAsNumber)}
+                value={flipped ? bgB : b}
+                onChange={(e) =>
+                  flipped
+                    ? setBgBlue(e.target.valueAsNumber)
+                    : setBlue(e.target.valueAsNumber)
+                }
               />
             </div>
           </Stack>

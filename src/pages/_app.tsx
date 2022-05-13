@@ -51,23 +51,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     let theme
 
-    if (flipped) {
-      theme = createTheme({
-        colors: {
-          blue: `rgb(${bgR}, ${bgG}, ${bgB})`,
-          blueAlpha: `rgba(${bgR}, ${bgG}, ${bgB}, 0.4)`,
-          background: `rgb(${r}, ${g}, ${b})`,
-        },
-      })
-    } else {
-      theme = createTheme({
-        colors: {
-          blue: `rgb(${r}, ${g}, ${b})`,
-          blueAlpha: `rgba(${r}, ${g}, ${b}, 0.4)`,
-          background: `rgb(${bgR}, ${bgG}, ${bgB})`,
-        },
-      })
-    }
+    theme = createTheme({
+      colors: {
+        blue: `rgb(${r}, ${g}, ${b})`,
+        blueAlpha: `rgba(${r}, ${g}, ${b}, 0.4)`,
+        background: `rgb(${bgR}, ${bgG}, ${bgB})`,
+      },
+    })
 
     setTheme(theme)
   }, [r, g, b, bgR, bgG, bgB, flipped])
