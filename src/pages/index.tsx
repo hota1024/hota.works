@@ -1,5 +1,6 @@
 import { useBlue, useGreen, useRed } from '@/atoms/color'
 import { Box } from '@/components/Box'
+import { ColorDetails } from '@/components/ColorDetails'
 import { Container } from '@/components/Container'
 import { DotRectangle } from '@/components/DotRectangle'
 import { Rectangle } from '@/components/Rectangle'
@@ -101,6 +102,15 @@ export const HomePage: NextPage = () => {
               />
             </div>
           </Stack>
+        </Box>
+        <Box
+          position="absolute"
+          css={{
+            right: 32,
+            bottom: 32,
+          }}
+        >
+          <ColorDetails />
         </Box>
       </Container>
     </>
