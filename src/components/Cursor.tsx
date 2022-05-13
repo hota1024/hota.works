@@ -39,7 +39,7 @@ const CenterPointer = styled(CursorPointer, {
         ...cursorSize(48),
         animation: `${CursorAnimation} 1000ms infinite ease-in-out`,
         background: 'transparent',
-        border: '2px solid white',
+        border: '2px solid $background',
       },
     },
   },
