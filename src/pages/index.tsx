@@ -1,3 +1,4 @@
+import { useBlue, useGreen, useRed } from '@/atoms/color'
 import { Box } from '@/components/Box'
 import { Container } from '@/components/Container'
 import { DotRectangle } from '@/components/DotRectangle'
@@ -6,14 +7,19 @@ import { SkewButton } from '@/components/SkewButton'
 import { Slider } from '@/components/Slider'
 import { Stack } from '@/components/Stack'
 import { Typography } from '@/components/Typography'
-import { keyframes } from '@/stitches.config'
+import { createTheme, keyframes } from '@/stitches.config'
 import { NextPage } from 'next'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 
 /**
  * HomePage component.
  */
 export const HomePage: NextPage = () => {
+  const [r, setRed] = useRed()
+  const [g, setGreen] = useGreen()
+  const [b, setBlue] = useBlue()
+
   return (
     <>
       <Head>
@@ -60,49 +66,38 @@ export const HomePage: NextPage = () => {
         <Box
           position="absolute"
           css={{
-            left: 96,
+            left: 32,
+            bottom: 16,
           }}
         >
-          <Stack spacing={1} direction="row">
-            <Box css={{ display: 'block' }}>
+          <Stack spacing={2} direction="column">
+            <div>
               <Slider
                 type="range"
                 min={0}
                 max={255}
-                direction="vertical"
-                aria-orientation="vertical"
-                css={{ display: 'inline-block' }}
+                value={r}
+                onChange={(e) => setRed(e.target.valueAsNumber)}
               />
-            </Box>
-            {/* <Box css={{ display: 'block' }}>
+            </div>
+            <div>
               <Slider
                 type="range"
                 min={0}
                 max={255}
-                direction="vertical"
-                aria-orientation="vertical"
-                css={{ display: 'inline-block' }}
+                value={g}
+                onChange={(e) => setGreen(e.target.valueAsNumber)}
               />
-            </Box>
-            <Box css={{ display: 'block' }}>
+            </div>
+            <div>
               <Slider
                 type="range"
                 min={0}
                 max={255}
-                direction="vertical"
-                aria-orientation="vertical"
-                css={{ display: 'inline-block' }}
+                value={b}
+                onChange={(e) => setBlue(e.target.valueAsNumber)}
               />
-            </Box> */}
-            {/* <Box css={{ display: 'inline-block' }}>
-              <Slider type="range" min={0} max={255} direction="vertical" />
-            </Box>
-            <Box css={{ display: 'inline-block' }}>
-              <Slider type="range" min={0} max={255} direction="vertical" />
-            </Box>
-            <Box css={{ display: 'inline-block' }}>
-              <Slider type="range" min={0} max={255} direction="vertical" />
-            </Box> */}
+            </div>
           </Stack>
         </Box>
       </Container>
