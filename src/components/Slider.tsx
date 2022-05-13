@@ -1,12 +1,12 @@
 import { styled } from '@/stitches.config'
 
 export const Slider = styled('input', {
-  width: 200,
+  width: '100%',
   height: 8,
   cursor: 'pointer',
   outline: 'none',
   background: '$blueAlpha',
-  borderRadius: 10,
+  borderRadius: '999px',
 
   '&::-webkit-slider-thumb': {
     '-webkit-appearance': 'none',

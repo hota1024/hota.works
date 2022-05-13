@@ -31,7 +31,9 @@ export const HomePage: NextPage = () => {
         fillHeight
         style={{ flexFlow: 'column' }}
       >
-        <Typography css={{ marginBottom: '$2' }}>hota1024</Typography>
+        <Typography css={{ marginBottom: '$2', color: '$blue' }}>
+          hota1024
+        </Typography>
         <Stack direction="row" spacing={2}>
           <SkewButton>About</SkewButton>
           <SkewButton>Works</SkewButton>
@@ -67,10 +69,10 @@ export const HomePage: NextPage = () => {
           position="absolute"
           css={{
             left: 32,
-            bottom: 16,
+            bottom: 32,
           }}
         >
-          <Stack spacing={2} direction="column">
+          <Stack spacing={2} direction="column" css={{ width: 256 }}>
             <div>
               <Slider
                 type="range"
