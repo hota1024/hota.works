@@ -3,6 +3,7 @@ import { Container } from '@/components/Container'
 import { DotRectangle } from '@/components/DotRectangle'
 import { Rectangle } from '@/components/Rectangle'
 import { SkewButton } from '@/components/SkewButton'
+import { Slider } from '@/components/Slider'
 import { Stack } from '@/components/Stack'
 import { Typography } from '@/components/Typography'
 import { keyframes } from '@/stitches.config'
@@ -55,6 +56,54 @@ export const HomePage: NextPage = () => {
           }}
         >
           <Rectangle />
+        </Box>
+        <Box
+          position="absolute"
+          css={{
+            left: 96,
+          }}
+        >
+          <Stack spacing={1} direction="row">
+            <Box css={{ display: 'block' }}>
+              <Slider
+                type="range"
+                min={0}
+                max={255}
+                direction="vertical"
+                aria-orientation="vertical"
+                css={{ display: 'inline-block' }}
+              />
+            </Box>
+            {/* <Box css={{ display: 'block' }}>
+              <Slider
+                type="range"
+                min={0}
+                max={255}
+                direction="vertical"
+                aria-orientation="vertical"
+                css={{ display: 'inline-block' }}
+              />
+            </Box>
+            <Box css={{ display: 'block' }}>
+              <Slider
+                type="range"
+                min={0}
+                max={255}
+                direction="vertical"
+                aria-orientation="vertical"
+                css={{ display: 'inline-block' }}
+              />
+            </Box> */}
+            {/* <Box css={{ display: 'inline-block' }}>
+              <Slider type="range" min={0} max={255} direction="vertical" />
+            </Box>
+            <Box css={{ display: 'inline-block' }}>
+              <Slider type="range" min={0} max={255} direction="vertical" />
+            </Box>
+            <Box css={{ display: 'inline-block' }}>
+              <Slider type="range" min={0} max={255} direction="vertical" />
+            </Box> */}
+          </Stack>
         </Box>
       </Container>
     </>
