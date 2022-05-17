@@ -15,6 +15,7 @@ import { Rectangle } from '@/components/Rectangle'
 import { SkewButton } from '@/components/SkewButton'
 import { Slider } from '@/components/Slider'
 import { Stack } from '@/components/Stack'
+import { Triangles } from '@/components/Triangles'
 import { Typography } from '@/components/Typography'
 import { createTheme, keyframes } from '@/stitches.config'
 import { NextPage } from 'next'
@@ -71,6 +72,14 @@ export const HomePage: NextPage = () => {
           }}
         >
           <DotRectangle css={{ borderRadius: '50%' }} />
+        </Box>
+        <Box
+          position="absolute"
+          css={{
+            left: 96,
+          }}
+        >
+          <Triangles />
         </Box>
         <Box
           position="absolute"
