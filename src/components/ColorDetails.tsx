@@ -4,12 +4,30 @@ import { Box } from './Box'
 import { Stack } from './Stack'
 
 const Code = styled('code', {
-  display: 'inline-block',
+  display: 'inline',
   color: '$blue',
   fontFamily: `'Roboto Mono'`,
   fontWeight: 'bold',
+  position: 'relative',
   fontSize: '1rem',
-  textAlign: 'right',
+  transition: 'all 200ms ease-in-out',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    background: '$blue',
+    transition: 'all 200ms ease-in-out',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: '100%',
+    zIndex: -1,
+  },
+  '&:hover&::before': {
+    left: 0,
+  },
+  '&:hover': {
+    color: '$background',
+  },
 })
 
 const rgbToHsl = (r: number, g: number, b: number) => {
@@ -64,17 +82,24 @@ export const ColorDetails: React.VFC<ColorDetailsProps> = (props) => {
   return (
     <Box>
       <Stack spacing={2} direction="column">
-        <Code>
-          #{r.toString(16).padStart(2, '0')}
-          {g.toString(16).padStart(2, '0')}
-          {b.toString(16).padStart(2, '0')}
-        </Code>
-        <Code>
-          hsl({h.toFixed(0)}°, {(s * 100).toFixed(0)}%, {(l * 100).toFixed(0)}%)
-        </Code>
-        <Code>
-          rgb({r}, {g}, {b})
-        </Code>
+        <Box css={{ textAlign: 'right' }}>
+          <Code>
+            #{r.toString(16).padStart(2, '0')}
+            {g.toString(16).padStart(2, '0')}
+            {b.toString(16).padStart(2, '0')}
+          </Code>
+        </Box>
+        <Box css={{ textAlign: 'right' }}>
+          <Code>
+            hsl({h.toFixed(0)}°, {(s * 100).toFixed(0)}%, {(l * 100).toFixed(0)}
+            %)
+          </Code>
+        </Box>
+        <Box css={{ textAlign: 'right' }}>
+          <Code>
+            rgb({r}, {g}, {b})
+          </Code>
+        </Box>
       </Stack>
     </Box>
   )
